@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  /* Premium Typography */
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Outfit", sans-serif;
+
+  /* Custom Color Palette (Luxury Coffee Aesthetic) */
+  --color-espresso: #120b06;
+  --color-dark-chocolate: #22150c;
+  --color-cocoa: #362215;
+  --color-caramel: #b57a4e;
+  --color-gold: #d4a373;
+  --color-warm-accent: #c68b59;
+  --color-cream: #fcfbfa;
+  --color-soft-cream: #f6f3ed;
+  --color-latte: #e3dac9;
+  --color-cappuccino: #d1c4b0;
+  
+  /* Customized animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out infinite 3s;
+  --animate-steam: steam 4s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Keyframe Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+
+@keyframes steam {
+  0% {
+    transform: translateY(0) scaleX(1) opacity(0);
+  }
+  15% {
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-20px) scaleX(1.3) opacity(0.6);
+  }
+  85% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-40px) scaleX(0.8) opacity(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #120b06;
+}
+::-webkit-scrollbar-thumb {
+  background: #b57a4e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a373;
+}
+
+/* Custom Global Reset & Styles */
+body {
+  cursor: none; /* Hide default cursor on desktop for custom cursor */
+}
+
+/* Keep cursor pointer on interactive elements or reset if needed on mobile */
+@media (max-width: 1024px) {
+  body {
+    cursor: auto !important;
+  }
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Smooth Scrolling layout reset */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection highlight */
+::selection {
+  background: #b57a4e;
+  color: #fcfbfa;
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(18, 11, 6, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(252, 251, 250, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(18, 11, 6, 0.05);
+}
+
+/* Card hover glow */
+.gold-glow:hover {
+  box-shadow: 0 0 25px rgba(212, 163, 115, 0.2);
+}
+
+/* Custom gradient utilities */
+.gradient-text {
+  background: linear-gradient(135deg, #d4a373 0%, #b57a4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-gold-brown {
+  background: linear-gradient(135deg, #22150c 0%, #120b06 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #b57a4e 0%, #d4a373 100%);
+}
